@@ -137,6 +137,11 @@ button {
   opacity: 0.7;
 }
 
+.brand-strong {
+  color: var(--navy);
+  font-weight: 900;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -181,6 +186,10 @@ button {
   width: 82px;
 }
 
+.switch-control.theme-switch {
+  width: 86px;
+}
+
 .switch-label {
   position: relative;
   z-index: 1;
@@ -188,8 +197,12 @@ button {
   place-items: center;
   min-height: 34px;
   color: rgba(8, 47, 73, 0.62);
-  font-size: 0.78rem;
+  font-size: 1rem;
   font-weight: 900;
+}
+
+.language-switch .switch-label {
+  font-size: 0.78rem;
 }
 
 .switch-control:not(.is-on) .switch-label:first-child,
@@ -272,6 +285,10 @@ button {
 
 :root[data-theme="dark"] .nav-links {
   color: rgba(232, 247, 251, 0.78);
+}
+
+:root[data-theme="dark"] .brand-strong {
+  color: #e8f7fb;
 }
 
 :root[data-theme="dark"] .opportunity-copy,
@@ -417,6 +434,14 @@ button {
 
 :root[data-theme="dark"] .step-card p {
   color: rgba(232, 247, 251, 0.76);
+}
+
+:root[data-theme="dark"] .service-icon,
+:root[data-theme="dark"] .service-card:nth-child(3n + 1) .service-icon,
+:root[data-theme="dark"] .service-card:nth-child(3n + 2) .service-icon,
+:root[data-theme="dark"] .service-card:nth-child(3n) .service-icon {
+  color: #31e2d4;
+  background: linear-gradient(135deg, rgba(49, 226, 212, 0.14), rgba(85, 199, 239, 0.08));
 }
 
 .nav-links a:not(.btn) {
@@ -940,14 +965,41 @@ h3 {
 }
 
 .service-icon {
-  display: block;
-  width: 34px;
-  height: 24px;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
   margin-bottom: 22px;
-  border-radius: 999px;
+  border-radius: 14px;
+  color: var(--ocean);
   background:
-    radial-gradient(circle at 68% 46%, var(--aqua) 0 24%, transparent 25%),
-    linear-gradient(135deg, rgba(15, 136, 184, 0.18), rgba(32, 214, 199, 0.2));
+    radial-gradient(circle at 76% 20%, rgba(32, 214, 199, 0.34), transparent 1.8rem),
+    linear-gradient(135deg, rgba(15, 136, 184, 0.12), rgba(32, 214, 199, 0.18));
+}
+
+.service-icon svg {
+  width: 23px;
+  height: 23px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.service-card:nth-child(3n + 1) .service-icon {
+  color: #0f88b8;
+  background: linear-gradient(135deg, rgba(15, 136, 184, 0.14), rgba(32, 214, 199, 0.24));
+}
+
+.service-card:nth-child(3n + 2) .service-icon {
+  color: #087f73;
+  background: linear-gradient(135deg, rgba(32, 214, 199, 0.2), rgba(232, 255, 252, 0.82));
+}
+
+.service-card:nth-child(3n) .service-icon {
+  color: #075985;
+  background: linear-gradient(135deg, rgba(8, 47, 73, 0.1), rgba(85, 199, 239, 0.22));
 }
 
 .service-card h3 {
@@ -1182,12 +1234,15 @@ h3 {
 .plan-tag {
   width: fit-content;
   margin: 0 0 14px;
-  padding: 7px 10px;
+  padding: 8px 12px;
   border-radius: 999px;
-  color: var(--navy);
-  background: linear-gradient(135deg, rgba(32, 214, 199, 0.22), rgba(15, 136, 184, 0.12));
+  color: #ffffff;
+  background: linear-gradient(135deg, #0f88b8 0%, #16c7bd 55%, #20d6c7 100%);
+  box-shadow: 0 12px 26px rgba(15, 136, 184, 0.28);
   font-size: 0.78rem;
   font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .price-card h3 {
