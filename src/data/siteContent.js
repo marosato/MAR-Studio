@@ -2,176 +2,571 @@
 export const whatsappUrl =
   "https://wa.me/549XXXXXXXXXX?text=Hola%20MAR%20Studio,%20quiero%20pedir%20presupuesto%20para%20una%20p%C3%A1gina%20web";
 
-export const brand = {
-  name: "MAR Studio",
-  promise: "Páginas web para comercios que quieren verse mejor y recibir más consultas.",
-  subpromise:
-    "Diseño tu landing moderna, clara y conectada a WhatsApp para que tus clientes encuentren todo rápido y te escriban sin vueltas.",
+const sharedPrices = {
+  basic: 300,
+  professional: 400,
+  premium: 500,
 };
 
-// Cambiar precios aca.
-export const packages = [
-  {
-    id: "basic",
-    name: "Básico",
-    price: 300,
-    description: "Para tener una presencia online prolija, rápida y fácil de compartir.",
-    bestFor: "negocios que necesitan una web clara para empezar",
-    delivery: "5 a 7 días hábiles",
-    sections: "Landing esencial",
-    features: [
-      "Estructura simple orientada a consulta",
-      "Diseño responsive para celular",
-      "WhatsApp siempre visible",
-      "Ubicación, horarios, redes y contacto",
-      "SEO básico para presentar mejor tu negocio",
+export const siteContent = {
+  es: {
+    locale: "es",
+    seo: {
+      title: "MAR Studio | Páginas web para comercios y locales gastronómicos",
+      description:
+        "MAR Studio crea páginas web modernas para comercios, locales, restaurantes y cafeterías. Landing pages con WhatsApp, menú, mapa, SEO básico y entrega en 5 a 7 días hábiles.",
+      keywords:
+        "páginas web para comercios, páginas web para locales, páginas web para restaurantes, páginas web para cafeterías, diseño web para negocios, landing page para comercios, página web con WhatsApp",
+    },
+    nav: {
+      services: "Servicios",
+      packages: "Paquetes",
+      calculator: "Calculadora",
+      process: "Proceso",
+      faq: "FAQ",
+      budget: "Pedir presupuesto",
+    },
+    ui: {
+      themeLabel: "Cambiar tema",
+      languageLabel: "Cambiar idioma",
+      light: "Claro",
+      dark: "Oscuro",
+      next: "→",
+      recommended: "Recomendado",
+      whatsapp: "WhatsApp",
+      quoteWhatsapp: "Pedir presupuesto por WhatsApp",
+      viewPackages: "Ver paquetes",
+      wantWebsite: "Quiero mi página web",
+      calculateEstimate: "Calcular estimado",
+      consultWhatsapp: "Consultar por WhatsApp",
+      askWhatsapp: "Hacer una consulta por WhatsApp",
+      homeLabel: "Ir al inicio de MAR Studio",
+      openMenu: "Abrir menú",
+      preferencesLabel: "Preferencias de visualización",
+      keyFacts: "Datos clave",
+      keyBenefits: "Beneficios principales",
+      planDetails: "Detalles del plan",
+    },
+    brand: {
+      name: "MAR Studio",
+      promise: "Páginas web para comercios que quieren verse mejor y recibir más consultas.",
+      subpromise:
+        "Diseño tu landing moderna, clara y conectada a WhatsApp para que tus clientes encuentren todo rápido y te escriban sin vueltas.",
+    },
+    hero: {
+      detail:
+        "Especializada en cafeterías, restaurantes, bares, panaderías y pequeños negocios que necesitan una presencia online profesional, simple de compartir y preparada para convertir visitas en conversaciones reales.",
+      ctaNote: "Respuesta sin compromiso. Te oriento con el paquete ideal.",
+      notes: ["Paquetes desde USD 300", "Entrega en 5 a 7 días hábiles", "WhatsApp directo incluido"],
+      benefits: ["Más consultas", "Mejor imagen", "Información clara"],
+      visualLabel: "Vista previa de una página web para un local gastronómico",
+      mock: {
+        small: "Menú + reservas",
+        title: "Café Brisa",
+        items: ["Menú claro", "Mapa", "Consulta"],
+        proof: "5-7 días",
+        proofText: "para salir online",
+      },
+    },
+    opportunity: {
+      eyebrow: "Oportunidad",
+      title: "Que tu cliente entienda, confíe y te escriba.",
+      paragraphs: [
+        "Cuando alguien descubre tu comercio, la decisión empieza con detalles simples: qué ofrecés, cómo se ve tu propuesta, dónde estás, cuándo abrís y cómo puede contactarte. Si esa información está clara, pedir o reservar se siente natural.",
+        "MAR Studio crea páginas pensadas para negocios reales: visuales, rápidas de recorrer y conectadas a WhatsApp para transformar interés en una conversación.",
+      ],
+      signals: [
+        "Tu propuesta se entiende en segundos",
+        "WhatsApp queda siempre a un toque",
+        "Tu local se percibe más profesional",
+        "Tus clientes encuentran todo sin fricción",
+      ],
+    },
+    servicesSection: {
+      eyebrow: "Servicios",
+      title: "Todo lo necesario para que tu página venda mejor.",
+    },
+    packagesSection: {
+      eyebrow: "Paquetes",
+      title: "Planes simples, claros y pensados para comercios.",
+      bestForPrefix: "Recomendado para",
+      note:
+        "Dominio, hosting y mantenimiento mensual son adicionales opcionales. El presupuesto final depende del alcance, cantidad de secciones y contenido disponible, pero siempre vas a saber qué incluye antes de avanzar.",
+      ctaNote: "Te ayudo a confirmar si este plan encaja con tu negocio.",
+      pricePrefix: "desde",
+    },
+    selector: {
+      eyebrow: "Selector",
+      title: "Contame qué tipo de negocio tenés y te muestro el enfoque ideal.",
+      aria: "Tipo de negocio",
+      resultPrefix: "Para este caso, el paquete sugerido suele ser",
+      resultSuffix: "porque equilibra claridad, estética y conversión a WhatsApp sin complicar el proceso.",
+    },
+    calculator: {
+      eyebrow: "Calculadora",
+      title: "Calculá un estimado rápido y pedí una orientación real.",
+      base: "Paquete base",
+      extras: "Extras posibles",
+      estimated: "Estimado inicial",
+      selectedBase: "Base seleccionada",
+      note:
+        "No es un precio cerrado: es una referencia para que sepas desde dónde partir. Por WhatsApp revisamos alcance, secciones y material disponible sin compromiso.",
+      ctaNote: "Te respondo con próximos pasos claros.",
+      options: [
+        ["menu", "Menú o catálogo ampliado", 60],
+        ["gallery", "Galería cuidada", 50],
+        ["copy", "Copywriting comercial", 80],
+        ["maintenance", "Mantenimiento mensual opcional", 45],
+      ],
+    },
+    beforeAfter: {
+      eyebrow: "Antes / Después",
+      title: "De datos sueltos a una página que guía la consulta.",
+      beforeTitle: "Antes",
+      beforeText: "Mensajes repetidos, horarios perdidos en historias, menú difícil de encontrar y clientes con dudas.",
+      afterTitle: "Después",
+      afterText: "Una página ordenada con propuesta, productos, fotos, mapa y botón de WhatsApp siempre visible.",
+    },
+    process: {
+      eyebrow: "Proceso",
+      title: "Cómo pasamos de idea a web publicada.",
+      steps: [
+        ["1", "Me escribís por WhatsApp", "Me contás tu rubro, qué necesitás mostrar y si ya tenés fotos o textos."],
+        ["2", "Definimos el alcance", "Te recomiendo paquete, estructura y prioridades para que la web sea clara y vendedora."],
+        ["3", "Diseño y desarrollo", "Creo la landing responsive, moderna y conectada a WhatsApp."],
+        ["4", "Revisamos y publicamos", "Ajustamos detalles finales y te dejo una página lista para compartir."],
+      ],
+    },
+    about: {
+      eyebrow: "Sobre MAR Studio",
+      title: "Diseño web pensado para negocios que quieren transmitir confianza desde el primer clic.",
+      text:
+        "MAR Studio crea páginas web modernas para comercios y pequeños negocios que quieren una presencia digital clara, estética y vendedora. La idea es simple: que tu cliente entienda rápido qué ofrecés, confíe en tu marca y pueda escribirte sin fricción.",
+    },
+    faqSection: {
+      eyebrow: "FAQ",
+      title: "Preguntas frecuentes antes de pedir presupuesto.",
+      ctaText: "¿Tenés una duda puntual sobre tu negocio?",
+      ctaNote: "Primer mensaje sin compromiso.",
+    },
+    finalCta: {
+      title: "Tu próxima web puede empezar con un mensaje simple.",
+      text:
+        "Contame qué negocio tenés, qué querés mostrar y si ya tenés fotos o textos. Te respondo con una orientación clara, sin compromiso y con el paquete que mejor encaje.",
+      note: "Sin formularios largos. Sin compromiso.",
+    },
+    packages: [
+      {
+        id: "basic",
+        name: "Básico",
+        price: sharedPrices.basic,
+        description: "Para tener una presencia online prolija, rápida y fácil de compartir.",
+        bestFor: "negocios que necesitan una web clara para empezar",
+        delivery: "5 a 7 días hábiles",
+        sections: "Landing esencial",
+        features: [
+          "Estructura simple orientada a consulta",
+          "Diseño responsive para celular",
+          "WhatsApp siempre visible",
+          "Ubicación, horarios, redes y contacto",
+          "SEO básico para presentar mejor tu negocio",
+        ],
+      },
+      {
+        id: "professional",
+        name: "Profesional",
+        price: sharedPrices.professional,
+        featured: true,
+        description: "El equilibrio ideal para mostrar tu propuesta, productos y contacto con más fuerza.",
+        bestFor: "locales gastronómicos y comercios que quieren convertir más visitas",
+        delivery: "5 a 7 días hábiles",
+        sections: "Landing completa",
+        features: [
+          "Todo lo del plan Básico",
+          "Sección de productos, servicios o menú",
+          "Galería visual para mostrar tu local",
+          "Formulario o bloque de consulta",
+          "Copy comercial y animaciones suaves",
+        ],
+      },
+      {
+        id: "premium",
+        name: "Premium",
+        price: sharedPrices.premium,
+        description: "Para marcas que quieren una experiencia más cuidada, completa y memorable.",
+        bestFor: "negocios con carta amplia, estética premium o más contenido",
+        delivery: "5 a 7 días hábiles",
+        sections: "Landing avanzada",
+        features: [
+          "Todo lo del plan Profesional",
+          "Más secciones y jerarquía de contenido",
+          "Copywriting comercial más profundo",
+          "Mayor detalle visual e interacciones",
+          "Acompañamiento para publicar online",
+        ],
+      },
+    ],
+    businessTypes: [
+      {
+        id: "cafeteria",
+        label: "Cafetería",
+        message: "Mostrá tu carta, ambiente, horarios y ubicación para que la consulta termine en visita.",
+        bullets: ["Carta clara", "Fotos del espacio", "WhatsApp para reservas"],
+        recommendation: "professional",
+      },
+      {
+        id: "restaurante",
+        label: "Restaurante",
+        message: "Reuní menú, reservas, WhatsApp, mapa y fotos en un sitio fácil de compartir.",
+        bullets: ["Menú ordenado", "Reservas directas", "Galería de platos"],
+        recommendation: "premium",
+      },
+      {
+        id: "bar",
+        label: "Bar",
+        message: "Comunicá propuesta, tragos, eventos y reservas con una presencia más cuidada.",
+        bullets: ["Eventos", "Promos", "Reservas por WhatsApp"],
+        recommendation: "professional",
+      },
+      {
+        id: "panaderia",
+        label: "Panadería",
+        message: "Mostrá productos, pedidos, horarios y sucursales sin depender solo de redes.",
+        bullets: ["Catálogo simple", "Pedidos directos", "Horarios visibles"],
+        recommendation: "professional",
+      },
+      {
+        id: "tienda",
+        label: "Tienda",
+        message: "Ordená productos, beneficios y contacto para que consultar sea simple.",
+        bullets: ["Productos destacados", "Confianza", "Contacto rápido"],
+        recommendation: "basic",
+      },
+      {
+        id: "servicio",
+        label: "Servicio profesional",
+        message: "Transmití confianza, explicá qué ofrecés y recibí consultas más calificadas.",
+        bullets: ["Servicios claros", "Prueba de confianza", "Consulta guiada"],
+        recommendation: "basic",
+      },
+      {
+        id: "otro",
+        label: "Otro comercio",
+        message: "Adaptamos la estructura a tu rubro para que tu negocio se vea serio, claro y accesible.",
+        bullets: ["Mensaje claro", "Diseño a medida", "WhatsApp directo"],
+        recommendation: "professional",
+      },
+    ],
+    services: [
+      "Landing page pensada para vender",
+      "Diseño responsive mobile-first",
+      "Botones y mensajes para WhatsApp",
+      "Productos, menú o servicios",
+      "Galería visual del local",
+      "Mapa, horarios y ubicación",
+      "Formulario de consulta",
+      "SEO básico inicial",
+      "Animaciones suaves",
+      "Integración con redes sociales",
+      "Dominio y hosting adicional",
+      "Mantenimiento opcional",
+    ],
+    benefits: [
+      "Tu negocio se ve más profesional cuando alguien te busca o recibe tu link.",
+      "Tus clientes encuentran horarios, menú, ubicación y contacto sin preguntarte todo por mensaje.",
+      "WhatsApp queda siempre a un toque para pedir presupuesto, reservar o consultar.",
+      "Podés compartir una sola página clara en redes, tarjetas, Google Maps y mensajes.",
+      "La web funciona como una vidriera digital incluso fuera del horario del local.",
+      "Tenés una base propia, más ordenada y más confiable que depender solo de redes.",
+    ],
+    faqs: [
+      ["¿Cuánto tarda la entrega?", "El plazo estimado es de 5 a 7 días hábiles desde que están definidos los textos, fotos y estructura principal. Si ya tenés material, el proceso suele avanzar más rápido."],
+      ["¿Los precios incluyen dominio y hosting?", "No. Los paquetes empiezan desde USD 300 y dominio, hosting y mantenimiento mensual son adicionales opcionales. Te puedo orientar para elegir la opción más simple según tu caso."],
+      ["¿Pedir presupuesto me compromete a contratar?", "No. El primer mensaje es sin compromiso: me contás qué negocio tenés y te respondo con una orientación clara sobre paquete, alcance y próximos pasos."],
+      ["¿Puedo usar la web para recibir pedidos o reservas por WhatsApp?", "Sí. La página puede incluir botones, textos y secciones preparados para que el cliente consulte, reserve o pida por WhatsApp con menos fricción."],
+      ["¿Necesito tener fotos profesionales?", "Ayudan mucho, pero no son obligatorias. Si todavía no tenés material, puedo trabajar con una dirección visual limpia y recomendarte qué fotos conviene sumar después."],
+      ["¿La web se ve bien en celular?", "Sí. La landing se diseña mobile-first para que cargue, se lea y convierta bien desde celular, que es donde la mayoría de los clientes consulta."],
+      ["¿Puedo pedir cambios después de publicada?", "Sí. Podés contratar mantenimiento mensual opcional para ajustes, actualizaciones de contenido y mejoras sin tener que preocuparte por la parte técnica."],
     ],
   },
-  {
-    id: "professional",
-    name: "Profesional",
-    price: 400,
-    featured: true,
-    description: "El equilibrio ideal para mostrar tu propuesta, productos y contacto con más fuerza.",
-    bestFor: "locales gastronómicos y comercios que quieren convertir más visitas",
-    delivery: "5 a 7 días hábiles",
-    sections: "Landing completa",
-    features: [
-      "Todo lo del plan Básico",
-      "Sección de productos, servicios o menú",
-      "Galería visual para mostrar tu local",
-      "Formulario o bloque de consulta",
-      "Copy comercial y animaciones suaves",
+  en: {
+    locale: "en",
+    seo: {
+      title: "MAR Studio | Websites for shops, cafes and restaurants",
+      description:
+        "MAR Studio creates modern websites for small businesses, shops, restaurants and cafes. Landing pages with WhatsApp, menu, map, basic SEO and delivery in 5 to 7 business days.",
+      keywords:
+        "websites for small businesses, websites for restaurants, websites for cafes, web design for businesses, landing page for shops, website with WhatsApp",
+    },
+    nav: {
+      services: "Services",
+      packages: "Packages",
+      calculator: "Calculator",
+      process: "Process",
+      faq: "FAQ",
+      budget: "Request a quote",
+    },
+    ui: {
+      themeLabel: "Change theme",
+      languageLabel: "Change language",
+      light: "Light",
+      dark: "Dark",
+      next: "→",
+      recommended: "Recommended",
+      whatsapp: "WhatsApp",
+      quoteWhatsapp: "Request a WhatsApp quote",
+      viewPackages: "View packages",
+      wantWebsite: "I want my website",
+      calculateEstimate: "Calculate estimate",
+      consultWhatsapp: "Ask on WhatsApp",
+      askWhatsapp: "Ask a question on WhatsApp",
+      homeLabel: "Go to MAR Studio home",
+      openMenu: "Open menu",
+      preferencesLabel: "Display preferences",
+      keyFacts: "Key facts",
+      keyBenefits: "Main benefits",
+      planDetails: "Plan details",
+    },
+    brand: {
+      name: "MAR Studio",
+      promise: "Websites for businesses that want to look sharper and get more inquiries.",
+      subpromise:
+        "I design modern, clear landing pages connected to WhatsApp so customers find everything fast and message you with less friction.",
+    },
+    hero: {
+      detail:
+        "Focused on cafes, restaurants, bars, bakeries and small businesses that need a professional online presence that is easy to share and built to turn visits into real conversations.",
+      ctaNote: "No commitment. I will guide you toward the right package.",
+      notes: ["Packages from USD 300", "Delivered in 5 to 7 business days", "Direct WhatsApp included"],
+      benefits: ["More inquiries", "Stronger image", "Clear information"],
+      visualLabel: "Website preview for a food business",
+      mock: {
+        small: "Menu + bookings",
+        title: "Brisa Cafe",
+        items: ["Clear menu", "Map", "Inquiry"],
+        proof: "5-7 days",
+        proofText: "to go online",
+      },
+    },
+    opportunity: {
+      eyebrow: "Opportunity",
+      title: "Help customers understand, trust and message you.",
+      paragraphs: [
+        "When someone discovers your business, the decision starts with simple details: what you offer, how your brand feels, where you are, when you are open and how to contact you. When that information is clear, asking or booking feels natural.",
+        "MAR Studio creates websites for real businesses: visual, quick to browse and connected to WhatsApp to turn interest into a conversation.",
+      ],
+      signals: [
+        "Your offer is understood in seconds",
+        "WhatsApp is always one tap away",
+        "Your business feels more professional",
+        "Customers find everything without friction",
+      ],
+    },
+    servicesSection: {
+      eyebrow: "Services",
+      title: "Everything your website needs to sell better.",
+    },
+    packagesSection: {
+      eyebrow: "Packages",
+      title: "Simple, clear plans built for small businesses.",
+      bestForPrefix: "Recommended for",
+      note:
+        "Domain, hosting and monthly maintenance are optional add-ons. The final quote depends on scope, number of sections and available content, but you will always know what is included before moving forward.",
+      ctaNote: "I will help you confirm if this plan fits your business.",
+      pricePrefix: "from",
+    },
+    selector: {
+      eyebrow: "Selector",
+      title: "Tell me your business type and I will show you the ideal approach.",
+      aria: "Business type",
+      resultPrefix: "For this case, the suggested package is usually",
+      resultSuffix: "because it balances clarity, design and WhatsApp conversion without overcomplicating the process.",
+    },
+    calculator: {
+      eyebrow: "Calculator",
+      title: "Calculate a quick estimate and ask for real guidance.",
+      base: "Base package",
+      extras: "Possible extras",
+      estimated: "Initial estimate",
+      selectedBase: "Selected base",
+      note:
+        "This is not a fixed price: it is a reference point. On WhatsApp we review scope, sections and available material with no commitment.",
+      ctaNote: "I will reply with clear next steps.",
+      options: [
+        ["menu", "Expanded menu or catalog", 60],
+        ["gallery", "Curated gallery", 50],
+        ["copy", "Commercial copywriting", 80],
+        ["maintenance", "Optional monthly maintenance", 45],
+      ],
+    },
+    beforeAfter: {
+      eyebrow: "Before / After",
+      title: "From scattered information to a page that guides the inquiry.",
+      beforeTitle: "Before",
+      beforeText: "Repeated messages, opening hours lost in stories, a hard-to-find menu and customers with questions.",
+      afterTitle: "After",
+      afterText: "An organized page with your offer, products, photos, map and WhatsApp button always visible.",
+    },
+    process: {
+      eyebrow: "Process",
+      title: "How we go from idea to published website.",
+      steps: [
+        ["1", "You message me on WhatsApp", "Tell me your business type, what you need to show and whether you already have photos or copy."],
+        ["2", "We define the scope", "I recommend a package, structure and priorities so the website is clear and conversion-focused."],
+        ["3", "Design and development", "I create a responsive, modern landing page connected to WhatsApp."],
+        ["4", "We review and publish", "We adjust the final details and you get a website ready to share."],
+      ],
+    },
+    about: {
+      eyebrow: "About MAR Studio",
+      title: "Web design for businesses that want to build trust from the first click.",
+      text:
+        "MAR Studio creates modern websites for shops and small businesses that want a clear, beautiful and sales-focused digital presence. The idea is simple: help your customer understand what you offer, trust your brand and message you without friction.",
+    },
+    faqSection: {
+      eyebrow: "FAQ",
+      title: "Frequently asked questions before requesting a quote.",
+      ctaText: "Do you have a specific question about your business?",
+      ctaNote: "First message with no commitment.",
+    },
+    finalCta: {
+      title: "Your next website can start with a simple message.",
+      text:
+        "Tell me what business you have, what you want to show and whether you already have photos or copy. I will reply with clear guidance, no commitment and the package that fits best.",
+      note: "No long forms. No commitment.",
+    },
+    packages: [
+      {
+        id: "basic",
+        name: "Basic",
+        price: sharedPrices.basic,
+        description: "For a polished online presence that is quick to launch and easy to share.",
+        bestFor: "businesses that need a clear website to get started",
+        delivery: "5 to 7 business days",
+        sections: "Essential landing",
+        features: [
+          "Simple structure focused on inquiries",
+          "Responsive mobile design",
+          "WhatsApp always visible",
+          "Location, hours, social links and contact",
+          "Basic SEO to present your business better",
+        ],
+      },
+      {
+        id: "professional",
+        name: "Professional",
+        price: sharedPrices.professional,
+        featured: true,
+        description: "The ideal balance to show your offer, products and contact with more strength.",
+        bestFor: "food businesses and shops that want to convert more visits",
+        delivery: "5 to 7 business days",
+        sections: "Complete landing",
+        features: [
+          "Everything in Basic",
+          "Products, services or menu section",
+          "Visual gallery to show your place",
+          "Contact form or inquiry block",
+          "Commercial copy and smooth animations",
+        ],
+      },
+      {
+        id: "premium",
+        name: "Premium",
+        price: sharedPrices.premium,
+        description: "For brands that want a more polished, complete and memorable experience.",
+        bestFor: "businesses with a larger menu, premium aesthetic or more content",
+        delivery: "5 to 7 business days",
+        sections: "Advanced landing",
+        features: [
+          "Everything in Professional",
+          "More sections and content hierarchy",
+          "Deeper commercial copywriting",
+          "More visual detail and interactions",
+          "Publishing support",
+        ],
+      },
+    ],
+    businessTypes: [
+      {
+        id: "cafeteria",
+        label: "Cafe",
+        message: "Show your menu, atmosphere, hours and location so an inquiry can become a visit.",
+        bullets: ["Clear menu", "Space photos", "WhatsApp bookings"],
+        recommendation: "professional",
+      },
+      {
+        id: "restaurante",
+        label: "Restaurant",
+        message: "Bring menu, bookings, WhatsApp, map and photos into one easy-to-share website.",
+        bullets: ["Organized menu", "Direct bookings", "Dish gallery"],
+        recommendation: "premium",
+      },
+      {
+        id: "bar",
+        label: "Bar",
+        message: "Communicate your concept, drinks, events and bookings with a more polished presence.",
+        bullets: ["Events", "Promos", "WhatsApp bookings"],
+        recommendation: "professional",
+      },
+      {
+        id: "panaderia",
+        label: "Bakery",
+        message: "Show products, orders, hours and branches without relying only on social media.",
+        bullets: ["Simple catalog", "Direct orders", "Visible hours"],
+        recommendation: "professional",
+      },
+      {
+        id: "tienda",
+        label: "Shop",
+        message: "Organize products, benefits and contact details so asking is simple.",
+        bullets: ["Featured products", "Trust", "Quick contact"],
+        recommendation: "basic",
+      },
+      {
+        id: "servicio",
+        label: "Professional service",
+        message: "Build trust, explain what you offer and receive more qualified inquiries.",
+        bullets: ["Clear services", "Trust proof", "Guided inquiry"],
+        recommendation: "basic",
+      },
+      {
+        id: "otro",
+        label: "Other business",
+        message: "We adapt the structure to your field so your business looks serious, clear and accessible.",
+        bullets: ["Clear message", "Tailored design", "Direct WhatsApp"],
+        recommendation: "professional",
+      },
+    ],
+    services: [
+      "Sales-focused landing page",
+      "Mobile-first responsive design",
+      "WhatsApp buttons and messages",
+      "Products, menu or services",
+      "Visual gallery",
+      "Map, hours and location",
+      "Contact form",
+      "Basic initial SEO",
+      "Smooth animations",
+      "Social media integration",
+      "Domain and hosting add-on",
+      "Optional maintenance",
+    ],
+    benefits: [
+      "Your business looks more professional when someone searches for you or receives your link.",
+      "Customers find hours, menu, location and contact without asking everything by message.",
+      "WhatsApp is always one tap away for quotes, bookings or questions.",
+      "You can share one clear page on social media, cards, Google Maps and messages.",
+      "The website works as a digital storefront even outside business hours.",
+      "You get your own organized base instead of relying only on social media.",
+    ],
+    faqs: [
+      ["How long does delivery take?", "The estimated delivery time is 5 to 7 business days once the main copy, photos and structure are defined. If you already have material, the process usually moves faster."],
+      ["Do prices include domain and hosting?", "No. Packages start at USD 300, and domain, hosting and monthly maintenance are optional add-ons. I can guide you toward the simplest option for your case."],
+      ["Does requesting a quote commit me to hiring?", "No. The first message has no commitment: tell me about your business and I will reply with clear guidance on package, scope and next steps."],
+      ["Can the website receive orders or bookings through WhatsApp?", "Yes. The page can include buttons, copy and sections prepared for customers to ask, book or order through WhatsApp with less friction."],
+      ["Do I need professional photos?", "They help a lot, but they are not mandatory. If you do not have material yet, I can work with a clean visual direction and recommend what photos to add later."],
+      ["Will the website look good on mobile?", "Yes. The landing page is designed mobile-first so it loads, reads and converts well on phones, where most customers browse."],
+      ["Can I request changes after publishing?", "Yes. You can hire optional monthly maintenance for adjustments, content updates and improvements without worrying about the technical side."],
     ],
   },
-  {
-    id: "premium",
-    name: "Premium",
-    price: 500,
-    description: "Para marcas que quieren una experiencia más cuidada, completa y memorable.",
-    bestFor: "negocios con carta amplia, estética premium o más contenido",
-    delivery: "5 a 7 días hábiles",
-    sections: "Landing avanzada",
-    features: [
-      "Todo lo del plan Profesional",
-      "Más secciones y jerarquía de contenido",
-      "Copywriting comercial más profundo",
-      "Mayor detalle visual e interacciones",
-      "Acompañamiento para publicar online",
-    ],
-  },
-];
-
-export const businessTypes = [
-  {
-    id: "cafeteria",
-    label: "Cafetería",
-    message: "Mostrá tu carta, ambiente, horarios y ubicación para que la consulta termine en visita.",
-    bullets: ["Carta clara", "Fotos del espacio", "WhatsApp para reservas"],
-    recommendation: "professional",
-  },
-  {
-    id: "restaurante",
-    label: "Restaurante",
-    message: "Reuní menú, reservas, WhatsApp, mapa y fotos en un sitio fácil de compartir.",
-    bullets: ["Menú ordenado", "Reservas directas", "Galería de platos"],
-    recommendation: "premium",
-  },
-  {
-    id: "bar",
-    label: "Bar",
-    message: "Comunicá propuesta, tragos, eventos y reservas con una presencia más cuidada.",
-    bullets: ["Eventos", "Promos", "Reservas por WhatsApp"],
-    recommendation: "professional",
-  },
-  {
-    id: "panaderia",
-    label: "Panadería",
-    message: "Mostrá productos, pedidos, horarios y sucursales sin depender solo de redes.",
-    bullets: ["Catálogo simple", "Pedidos directos", "Horarios visibles"],
-    recommendation: "professional",
-  },
-  {
-    id: "tienda",
-    label: "Tienda",
-    message: "Ordená productos, beneficios y contacto para que consultar sea simple.",
-    bullets: ["Productos destacados", "Confianza", "Contacto rápido"],
-    recommendation: "basic",
-  },
-  {
-    id: "servicio",
-    label: "Servicio profesional",
-    message: "Transmití confianza, explicá qué ofrecés y recibí consultas más calificadas.",
-    bullets: ["Servicios claros", "Prueba de confianza", "Consulta guiada"],
-    recommendation: "basic",
-  },
-  {
-    id: "otro",
-    label: "Otro comercio",
-    message: "Adaptamos la estructura a tu rubro para que tu negocio se vea serio, claro y accesible.",
-    bullets: ["Mensaje claro", "Diseño a medida", "WhatsApp directo"],
-    recommendation: "professional",
-  },
-];
-
-export const services = [
-  "Landing page pensada para vender",
-  "Diseño responsive mobile-first",
-  "Botones y mensajes para WhatsApp",
-  "Productos, menú o servicios",
-  "Galería visual del local",
-  "Mapa, horarios y ubicación",
-  "Formulario de consulta",
-  "SEO básico inicial",
-  "Animaciones suaves",
-  "Integración con redes sociales",
-  "Dominio y hosting adicional",
-  "Mantenimiento opcional",
-];
-
-export const benefits = [
-  "Tu negocio se ve más profesional cuando alguien te busca o recibe tu link.",
-  "Tus clientes encuentran horarios, menú, ubicación y contacto sin preguntarte todo por mensaje.",
-  "WhatsApp queda siempre a un toque para pedir presupuesto, reservar o consultar.",
-  "Podés compartir una sola página clara en redes, tarjetas, Google Maps y mensajes.",
-  "La web funciona como una vidriera digital incluso fuera del horario del local.",
-  "Tenés una base propia, más ordenada y más confiable que depender solo de redes.",
-];
-
-export const faqs = [
-  {
-    question: "¿Cuánto tarda la entrega?",
-    answer:
-      "El plazo estimado es de 5 a 7 días hábiles desde que están definidos los textos, fotos y estructura principal. Si ya tenés material, el proceso suele avanzar más rápido.",
-  },
-  {
-    question: "¿Los precios incluyen dominio y hosting?",
-    answer:
-      "No. Los paquetes empiezan desde USD 300 y dominio, hosting y mantenimiento mensual son adicionales opcionales. Te puedo orientar para elegir la opción más simple según tu caso.",
-  },
-  {
-    question: "¿Pedir presupuesto me compromete a contratar?",
-    answer:
-      "No. El primer mensaje es sin compromiso: me contás qué negocio tenés y te respondo con una orientación clara sobre paquete, alcance y próximos pasos.",
-  },
-  {
-    question: "¿Puedo usar la web para recibir pedidos o reservas por WhatsApp?",
-    answer:
-      "Sí. La página puede incluir botones, textos y secciones preparados para que el cliente consulte, reserve o pida por WhatsApp con menos fricción.",
-  },
-  {
-    question: "¿Necesito tener fotos profesionales?",
-    answer:
-      "Ayudan mucho, pero no son obligatorias. Si todavía no tenés material, puedo trabajar con una dirección visual limpia y recomendarte qué fotos conviene sumar después.",
-  },
-  {
-    question: "¿La web se ve bien en celular?",
-    answer:
-      "Sí. La landing se diseña mobile-first para que cargue, se lea y convierta bien desde celular, que es donde la mayoría de los clientes consulta.",
-  },
-  {
-    question: "¿Puedo pedir cambios después de publicada?",
-    answer:
-      "Sí. Podés contratar mantenimiento mensual opcional para ajustes, actualizaciones de contenido y mejoras sin tener que preocuparte por la parte técnica.",
-  },
-];
+};
