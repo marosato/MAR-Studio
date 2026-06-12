@@ -22,6 +22,23 @@
   scroll-behavior: smooth;
 }
 
+:root[data-theme="dark"] {
+  --navy: #d8f7ff;
+  --navy-2: #aeeeff;
+  --ink: #e8f7fb;
+  --muted: #a9bdc8;
+  --line: rgba(202, 244, 255, 0.16);
+  --pale: #0d2634;
+  --pale-2: #0a1d2a;
+  --white: #ffffff;
+  --ocean: #55c7ef;
+  --aqua: #31e2d4;
+  --aqua-soft: rgba(49, 226, 212, 0.14);
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+  --shadow-strong: 0 30px 80px rgba(0, 0, 0, 0.44);
+  color-scheme: dark;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -33,6 +50,17 @@ body {
     radial-gradient(circle at 12% 4%, rgba(32, 214, 199, 0.16), transparent 28rem),
     radial-gradient(circle at 88% 0%, rgba(15, 136, 184, 0.13), transparent 24rem),
     var(--white);
+  color: var(--ink);
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+:root[data-theme="dark"] body {
+  background:
+    radial-gradient(circle at 12% 4%, rgba(32, 214, 199, 0.13), transparent 28rem),
+    radial-gradient(circle at 88% 0%, rgba(15, 136, 184, 0.16), transparent 24rem),
+    #071722;
 }
 
 body,
@@ -57,6 +85,11 @@ button {
   background: rgba(255, 255, 255, 0.78);
   border-bottom: 1px solid rgba(8, 47, 73, 0.08);
   backdrop-filter: blur(18px);
+}
+
+:root[data-theme="dark"] .site-header {
+  background: rgba(7, 23, 34, 0.78);
+  border-bottom-color: rgba(202, 244, 255, 0.1);
 }
 
 .nav-shell {
@@ -111,6 +144,164 @@ button {
   color: rgba(16, 33, 49, 0.76);
   font-size: 0.94rem;
   font-weight: 650;
+}
+
+.nav-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.control-pill {
+  min-height: 40px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--navy);
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 0.82rem;
+  font-weight: 850;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.control-pill:hover,
+.control-pill:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(32, 214, 199, 0.5);
+}
+
+:root[data-theme="dark"] .control-pill {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+:root[data-theme="dark"] .nav-links {
+  color: rgba(232, 247, 251, 0.78);
+}
+
+:root[data-theme="dark"] .opportunity-copy,
+:root[data-theme="dark"] .signal-item,
+:root[data-theme="dark"] .benefit-item,
+:root[data-theme="dark"] .service-card,
+:root[data-theme="dark"] .price-card,
+:root[data-theme="dark"] .step-card,
+:root[data-theme="dark"] fieldset,
+:root[data-theme="dark"] .plan-options label,
+:root[data-theme="dark"] .extra-options label,
+:root[data-theme="dark"] .faq-item {
+  background: rgba(255, 255, 255, 0.045);
+}
+
+:root[data-theme="dark"] .price-card.featured {
+  background:
+    linear-gradient(180deg, rgba(13, 38, 52, 0.94), rgba(7, 23, 34, 0.95)),
+    #071722;
+}
+
+:root[data-theme="dark"] .plan-meta span,
+:root[data-theme="dark"] .hero-notes span,
+:root[data-theme="dark"] .before-panel {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--line);
+}
+
+:root[data-theme="dark"] .about-band {
+  background:
+    linear-gradient(180deg, rgba(13, 38, 52, 0.78), rgba(7, 23, 34, 0.92)),
+    #071722;
+}
+
+:root[data-theme="dark"] .browser-card,
+:root[data-theme="dark"] .floating-proof {
+  background: rgba(7, 23, 34, 0.78);
+  border-color: var(--line);
+}
+
+:root[data-theme="dark"] .mock-stack div,
+:root[data-theme="dark"] .messy-lines span {
+  background: rgba(255, 255, 255, 0.11);
+}
+
+:root[data-theme="dark"] .btn-primary {
+  color: #04202d;
+  background: linear-gradient(135deg, #31e2d4 0%, #55c7ef 62%, #b8fbff 120%);
+  box-shadow: 0 20px 44px rgba(49, 226, 212, 0.18);
+}
+
+:root[data-theme="dark"] .btn-secondary,
+:root[data-theme="dark"] .btn-outline,
+:root[data-theme="dark"] .business-buttons button,
+:root[data-theme="dark"] .menu-toggle,
+:root[data-theme="dark"] .mock-whatsapp {
+  color: #e8f7fb;
+  background: rgba(255, 255, 255, 0.075);
+  border-color: rgba(202, 244, 255, 0.18);
+}
+
+:root[data-theme="dark"] .btn-secondary:hover,
+:root[data-theme="dark"] .btn-outline:hover,
+:root[data-theme="dark"] .business-buttons button:hover,
+:root[data-theme="dark"] .business-buttons button.active {
+  color: #ffffff;
+  background: rgba(49, 226, 212, 0.14);
+  border-color: rgba(49, 226, 212, 0.5);
+}
+
+:root[data-theme="dark"] .selector-result,
+:root[data-theme="dark"] .estimate-card,
+:root[data-theme="dark"] .final-cta,
+:root[data-theme="dark"] .faq-cta {
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 92% 12%, rgba(49, 226, 212, 0.28), transparent 16rem),
+    linear-gradient(135deg, #092232, #0b5f7f);
+}
+
+:root[data-theme="dark"] .hero-notes span,
+:root[data-theme="dark"] .hero-confidence p,
+:root[data-theme="dark"] .plan-meta span,
+:root[data-theme="dark"] .price-card .cta-stack small,
+:root[data-theme="dark"] .cta-stack small,
+:root[data-theme="dark"] .mock-list,
+:root[data-theme="dark"] .floating-proof span {
+  color: rgba(232, 247, 251, 0.78);
+}
+
+:root[data-theme="dark"] .mock-photo,
+:root[data-theme="dark"] .mock-stack,
+:root[data-theme="dark"] .mock-list {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+:root[data-theme="dark"] .mock-photo.large {
+  background:
+    radial-gradient(circle at 32% 34%, rgba(255, 255, 255, 0.72) 0 12%, transparent 13%),
+    linear-gradient(135deg, rgba(85, 199, 239, 0.2), rgba(49, 226, 212, 0.28));
+}
+
+:root[data-theme="dark"] .step-card {
+  border-color: rgba(202, 244, 255, 0.18);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.035)),
+    rgba(7, 23, 34, 0.7);
+}
+
+:root[data-theme="dark"] .step-card span {
+  color: #04202d;
+  background: linear-gradient(135deg, #31e2d4, #9df8ff);
+}
+
+:root[data-theme="dark"] .step-card h3 {
+  color: #e8f7fb;
+}
+
+:root[data-theme="dark"] .step-card p {
+  color: rgba(232, 247, 251, 0.76);
 }
 
 .nav-links a:not(.btn) {
@@ -1378,6 +1569,19 @@ input {
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
+  }
+
+  :root[data-theme="dark"] .nav-links {
+    background: rgba(7, 23, 34, 0.96);
+  }
+
+  .nav-controls {
+    width: 100%;
+  }
+
+  .control-pill {
+    flex: 1;
+    justify-content: center;
   }
 
   .nav-cta {
