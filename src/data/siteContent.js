@@ -20,6 +20,7 @@ export const siteContent = {
     },
     nav: {
       services: "Servicios",
+      websites: "Paginas web",
       packages: "Paquetes",
       calculator: "Calculadora",
       process: "Proceso",
@@ -84,7 +85,46 @@ export const siteContent = {
     },
     servicesSection: {
       eyebrow: "Servicios",
+      intro:
+        "Lo importante queda visible y accionable: propuesta, fotos, menu, ubicacion y WhatsApp. Sin botones decorativos ni secciones que no ayudan a vender.",
       title: "Todo lo necesario para que tu página venda mejor.",
+    },
+    websiteExamples: {
+      eyebrow: "Paginas web",
+      title: "Ejemplos visuales para imaginar tu proxima web.",
+      subtitle:
+        "Todavia no los presentamos como trabajos publicados: son referencias conceptuales para mostrar estilos posibles, funcionalidades y nivel de presencia que puede tener tu negocio.",
+      functionsLabel: "Funcionalidades posibles",
+      functions: [
+        "Menu online",
+        "Pedidos o reservas",
+        "Catalogo visual",
+        "Mapa y horarios",
+        "Promos destacadas",
+        "Redes sociales",
+        "SEO basico",
+        "WhatsApp directo",
+      ],
+      items: [
+        {
+          tag: "Cafeteria",
+          title: "Carta clara + reservas",
+          description: "Ideal para mostrar ambiente, productos estrella y boton de reserva en un recorrido corto.",
+          chips: ["Menu", "Fotos", "Reservas"],
+        },
+        {
+          tag: "Restaurante",
+          title: "Menu, platos y ubicacion",
+          description: "Una web visual para consultar platos, horarios, mapa y escribir por WhatsApp sin buscar de mas.",
+          chips: ["Platos", "Mapa", "WhatsApp"],
+        },
+        {
+          tag: "Comercio",
+          title: "Catalogo simple para vender",
+          description: "Pensada para presentar productos o servicios con buena imagen y consulta directa.",
+          chips: ["Catalogo", "Promos", "Consulta"],
+        },
+      ],
     },
     packagesSection: {
       eyebrow: "Paquetes",
@@ -300,6 +340,7 @@ export const siteContent = {
     },
     nav: {
       services: "Services",
+      websites: "Websites",
       packages: "Packages",
       calculator: "Calculator",
       process: "Process",
@@ -364,7 +405,46 @@ export const siteContent = {
     },
     servicesSection: {
       eyebrow: "Services",
+      intro:
+        "The essentials stay visible and actionable: offer, photos, menu, location and WhatsApp. No decorative buttons or sections that do not help people inquire.",
       title: "Everything your website needs to sell better.",
+    },
+    websiteExamples: {
+      eyebrow: "Websites",
+      title: "Visual examples to imagine your next website.",
+      subtitle:
+        "These are not published client projects yet: they are conceptual references that show possible styles, features and the level of online presence your business can have.",
+      functionsLabel: "Possible features",
+      functions: [
+        "Online menu",
+        "Orders or bookings",
+        "Visual catalog",
+        "Map and hours",
+        "Featured promos",
+        "Social links",
+        "Basic SEO",
+        "Direct WhatsApp",
+      ],
+      items: [
+        {
+          tag: "Cafe",
+          title: "Clear menu + bookings",
+          description: "Ideal for showing atmosphere, hero products and a booking button in a short path.",
+          chips: ["Menu", "Photos", "Bookings"],
+        },
+        {
+          tag: "Restaurant",
+          title: "Menu, dishes and location",
+          description: "A visual website to check dishes, hours, map and message on WhatsApp without extra searching.",
+          chips: ["Dishes", "Map", "WhatsApp"],
+        },
+        {
+          tag: "Shop",
+          title: "Simple catalog to sell",
+          description: "Built to present products or services with a stronger image and direct inquiry.",
+          chips: ["Catalog", "Promos", "Inquiry"],
+        },
+      ],
     },
     packagesSection: {
       eyebrow: "Packages",
