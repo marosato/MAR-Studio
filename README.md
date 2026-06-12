@@ -23,8 +23,9 @@ npm run preview
 
 - WhatsApp: `src/data/siteContent.js`, constante `whatsappUrl`.
 - Precios y paquetes: `src/data/siteContent.js`, arreglo `packages`.
-- Textos principales, servicios, beneficios, FAQ y tipos de negocio: `src/data/siteContent.js`.
+- Textos principales, servicios, beneficios, FAQ, tipos de negocio e idiomas: `src/data/siteContent.js`, objeto `siteContent`.
 - Colores base: `src/styles.css`, variables dentro de `:root`.
+- Modo oscuro: `src/styles.css`, bloque `:root[data-theme="dark"]`.
 - Componentes y estructura de secciones: `src/App.jsx`.
 
 ## SEO incluido
