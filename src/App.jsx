@@ -57,10 +57,27 @@ function CtaStack({ children, note, href = whatsappUrl, variant = "primary", cla
   );
 }
 
+function SwitchControl({ label, checked, onClick, leftLabel, rightLabel, className = "" }) {
+  return (
+    <button
+      className={`switch-control ${checked ? "is-on" : ""} ${className}`}
+      type="button"
+      aria-label={label}
+      aria-pressed={checked}
+      onClick={onClick}
+    >
+      <span className="switch-label">{leftLabel}</span>
+      <span className="switch-label">{rightLabel}</span>
+      <span className="switch-thumb" aria-hidden="true" />
+    </button>
+  );
+}
+
 function Header({ copy, language, theme, onLanguageToggle, onThemeToggle }) {
   const [open, setOpen] = useState(false);
   const navItems = [
     [copy.nav.services, "#servicios"],
+    [copy.nav.websites, "#paginas-web"],
     [copy.nav.packages, "#paquetes"],
     [copy.nav.calculator, "#calculadora"],
     [copy.nav.process, "#proceso"],
@@ -88,6 +105,22 @@ function Header({ copy, language, theme, onLanguageToggle, onThemeToggle }) {
             </a>
           ))}
           <div className="nav-controls" aria-label={copy.ui.preferencesLabel}>
+            <SwitchControl
+              label={copy.ui.themeLabel}
+              checked={theme === "dark"}
+              onClick={onThemeToggle}
+              leftLabel={copy.ui.light}
+              rightLabel={copy.ui.dark}
+              className="theme-switch"
+            />
+            <SwitchControl
+              label={copy.ui.languageLabel}
+              checked={language === "en"}
+              onClick={onLanguageToggle}
+              leftLabel="ES"
+              rightLabel="EN"
+              className="language-switch"
+            />
             <button
               className="control-pill"
               type="button"
@@ -216,6 +249,7 @@ function Opportunity({ copy }) {
 function Services({ copy }) {
   return (
     <Section id="servicios" eyebrow={copy.servicesSection.eyebrow} title={copy.servicesSection.title}>
+      <p className="section-intro">{copy.servicesSection.intro}</p>
       <div className="service-grid">
         {copy.services.map((service) => (
           <article className="service-card" key={service}>
@@ -223,6 +257,65 @@ function Services({ copy }) {
             <h3>{service}</h3>
           </article>
         ))}
+      </div>
+    </Section>
+  );
+}
+
+function WebsiteShowcase({ copy }) {
+  return (
+    <Section
+      id="paginas-web"
+      eyebrow={copy.websiteExamples.eyebrow}
+      title={copy.websiteExamples.title}
+      className="showcase-section"
+    >
+      <div className="showcase-layout">
+        <div className="showcase-copy">
+          <p>{copy.websiteExamples.subtitle}</p>
+          <div className="showcase-functions" aria-label={copy.websiteExamples.functionsLabel}>
+            {copy.websiteExamples.functions.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
+          <CtaButton href="#calculadora" variant="secondary" arrow={copy.ui.next}>
+            {copy.ui.calculateEstimate}
+          </CtaButton>
+        </div>
+        <div className="website-preview-grid">
+          {copy.websiteExamples.items.map((item, index) => (
+            <article className={`website-preview-card preview-${index + 1}`} key={item.title}>
+              <div className="preview-image" aria-hidden="true">
+                <div className="preview-browser">
+                  <span />
+                  <span />
+                  <span />
+                </div>
+                <div className="preview-hero-block">
+                  <span>{item.tag}</span>
+                  <strong>{item.title}</strong>
+                </div>
+                <div className="preview-content">
+                  <div className="preview-photo" />
+                  <div className="preview-lines">
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+                </div>
+                <div className="preview-chips">
+                  {item.chips.map((chip) => (
+                    <span key={chip}>{chip}</span>
+                  ))}
+                </div>
+              </div>
+              <div className="preview-caption">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </Section>
   );
@@ -594,6 +687,7 @@ function App() {
       <Hero copy={copy} />
       <Opportunity copy={copy} />
       <Services copy={copy} />
+      <WebsiteShowcase copy={copy} />
       <Packages copy={copy} />
       <BusinessSelector copy={copy} />
       <Calculator copy={copy} />
