@@ -16,12 +16,23 @@ function Logo({ copy }) {
   );
 }
 
+function BrandText({ children }) {
+  if (typeof children !== "string" || !children.includes("MAR Studio")) return children;
+
+  return children.split("MAR Studio").map((part, index, parts) => (
+    <span key={`${part}-${index}`}>
+      {part}
+      {index < parts.length - 1 && <strong className="brand-strong">MAR Studio</strong>}
+    </span>
+  ));
+}
+
 function Section({ id, eyebrow, title, children, className = "" }) {
   return (
     <section id={id} className={`section reveal ${className}`}>
       <div className="section-head">
-        {eyebrow && <p className="section-label">{eyebrow}</p>}
-        <h2>{title}</h2>
+        {eyebrow && <p className="section-label"><BrandText>{eyebrow}</BrandText></p>}
+        <h2><BrandText>{title}</BrandText></h2>
       </div>
       {children}
     </section>
@@ -109,8 +120,8 @@ function Header({ copy, language, theme, onLanguageToggle, onThemeToggle }) {
               label={copy.ui.themeLabel}
               checked={theme === "dark"}
               onClick={onThemeToggle}
-              leftLabel={copy.ui.light}
-              rightLabel={copy.ui.dark}
+              leftLabel="☀️"
+              rightLabel="🌙"
               className="theme-switch"
             />
             <SwitchControl
@@ -230,7 +241,7 @@ function Opportunity({ copy }) {
       <div className="opportunity-grid">
         <div className="opportunity-copy">
           {copy.opportunity.paragraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
+            <p key={paragraph}><BrandText>{paragraph}</BrandText></p>
           ))}
         </div>
         <div className="signal-list">
@@ -246,14 +257,39 @@ function Opportunity({ copy }) {
   );
 }
 
+function ServiceIcon({ index }) {
+  const icons = [
+    <path key="landing" d="M5 7h14M7 11h6M7 15h10M5 3h14v18H5z" />,
+    <path key="mobile" d="M8 3h8v18H8zM11 18h2" />,
+    <path key="chat" d="M4 6h16v10H9l-5 4zM8 10h8M8 13h5" />,
+    <path key="menu" d="M5 7h14M5 12h14M5 17h10" />,
+    <path key="gallery" d="M4 5h16v14H4zM7 15l3-3 2 2 3-4 3 5" />,
+    <path key="map" d="M9 18l-5 2V6l5-2 6 2 5-2v14l-5 2zM9 4v14M15 6v14" />,
+    <path key="form" d="M6 4h12v16H6zM9 8h6M9 12h6M9 16h4" />,
+    <path key="seo" d="M10 17a7 7 0 1 1 5-2l4 4M8 12l2 2 4-5" />,
+    <path key="motion" d="M4 12h6l-2-3M10 12l-2 3M14 6h6M14 12h6M14 18h6" />,
+    <path key="social" d="M8 12a3 3 0 1 0 0-1M16 7a3 3 0 1 0 0-1M16 18a3 3 0 1 0 0-1M10 11l4-3M10 13l4 3" />,
+    <path key="hosting" d="M5 6h14v5H5zM5 13h14v5H5zM8 8h1M8 15h1" />,
+    <path key="maintenance" d="M14 6l4 4-8 8H6v-4zM15 7l2 2" />,
+  ];
+
+  return (
+    <span className="service-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" focusable="false">
+        {icons[index % icons.length]}
+      </svg>
+    </span>
+  );
+}
+
 function Services({ copy }) {
   return (
     <Section id="servicios" eyebrow={copy.servicesSection.eyebrow} title={copy.servicesSection.title}>
-      <p className="section-intro">{copy.servicesSection.intro}</p>
+      <p className="section-intro"><BrandText>{copy.servicesSection.intro}</BrandText></p>
       <div className="service-grid">
-        {copy.services.map((service) => (
+        {copy.services.map((service, index) => (
           <article className="service-card" key={service}>
-            <span className="service-icon" aria-hidden="true" />
+            <ServiceIcon index={index} />
             <h3>{service}</h3>
           </article>
         ))}
@@ -568,9 +604,9 @@ function AboutAndBenefits({ copy }) {
   return (
     <section className="about-band reveal">
       <div id="sobre-mar" className="about-copy">
-        <p className="section-label">{copy.about.eyebrow}</p>
-        <h2>{copy.about.title}</h2>
-        <p>{copy.about.text}</p>
+        <p className="section-label"><BrandText>{copy.about.eyebrow}</BrandText></p>
+        <h2><BrandText>{copy.about.title}</BrandText></h2>
+        <p><BrandText>{copy.about.text}</BrandText></p>
       </div>
       <div className="benefit-list">
         {copy.benefits.map((benefit) => (
