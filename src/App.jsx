@@ -27,6 +27,23 @@ function BrandText({ children }) {
   ));
 }
 
+function ThemeIcon({ type }) {
+  if (type === "sun") {
+    return (
+      <svg className="switch-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg className="switch-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M18.4 14.2A7.2 7.2 0 0 1 9.8 5.6 8 8 0 1 0 18.4 14.2Z" />
+    </svg>
+  );
+}
+
 function Section({ id, eyebrow, title, children, className = "" }) {
   return (
     <section id={id} className={`section reveal ${className}`}>
@@ -120,8 +137,8 @@ function Header({ copy, language, theme, onLanguageToggle, onThemeToggle }) {
               label={copy.ui.themeLabel}
               checked={theme === "dark"}
               onClick={onThemeToggle}
-              leftLabel="☀️"
-              rightLabel="🌙"
+              leftLabel={<ThemeIcon type="sun" />}
+              rightLabel={<ThemeIcon type="moon" />}
               className="theme-switch"
             />
             <SwitchControl
