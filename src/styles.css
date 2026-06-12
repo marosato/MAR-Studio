@@ -205,6 +205,16 @@ button {
   font-size: 0.78rem;
 }
 
+.switch-icon {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .switch-control:not(.is-on) .switch-label:first-child,
 .switch-control.is-on .switch-label:nth-child(2) {
   color: #ffffff;
